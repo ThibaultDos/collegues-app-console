@@ -1,13 +1,11 @@
-var menu = require("./presentation");
+const menuPresentation = require("./presentation");
 
-
-function afficherMenu() {
+const afficherMenu = () => {
 
     console.log("** Administration Collegues **");
-    menu.run();
+    menuPresentation.run();
 }
 
 afficherMenu();
-
 
 exports.afficherMenu = afficherMenu;
