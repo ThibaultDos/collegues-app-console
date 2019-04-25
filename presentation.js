@@ -11,7 +11,7 @@ const userCase = readline.createInterface({
 });
 
 const userChoice = () => {
-    userCase.question("Choisissez vite mais choisissez bien : \n>>> ", choice => {
+    userCase.question(`Choisissez vite mais choisissez bien : \n>>> `, choice => {
         if (choice == "1") {
             userCase.question("Entrez un nom à rechercher (Huasca par exemple) : \n>>> ", nom => {
                 console.log(`Recherche en cours pour le nom ${nom} ...`);
@@ -24,7 +24,7 @@ const userChoice = () => {
                     menu.afficherMenu();
                     userChoice();
                 }, (messageErr) => {
-                    console.log("Ousp : ", messageErr);
+                    console.log(`Ousp : ${messageErr}`);
                     menu.afficherMenu();
                     userChoice();
 
