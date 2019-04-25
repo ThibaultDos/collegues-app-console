@@ -1,8 +1,8 @@
 const menu = require("./index");
 
 //importe TOUTES les fonctions exportées depuis la page service.js
-const service = require("./service");
-
+const ServicePresentation = require("./service");
+let service = new ServicePresentation();
 const readline = require("readline");
 
 const userCase = readline.createInterface({
@@ -15,7 +15,7 @@ const userChoice = () => {
         if (choice == "1") {
             userCase.question("Entrez un nom à rechercher (Huasca par exemple) : \n>>> ", nom => {
                 console.log(`Recherche en cours pour le nom ${nom} ...`);
-                service.rechercherColleguesParNomAssynchrone(nom)
+                service.rechercherColleguesParNom(nom)
                 .then(tableauCollegue => {
                     tableauCollegue.forEach(collegue => {
                         console.log(`${collegue.nom} ${collegue.prenoms} (${collegue.dateDeNaissance})`);
